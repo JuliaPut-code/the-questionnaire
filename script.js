@@ -1,6 +1,11 @@
 const form = document.querySelector(".form");
 const button = document.getElementById("button");
 const clearButton = document.getElementById("clear");
+const nameInput = document.getElementById("name");
+const secondNameInput = document.getElementById("secondName");
+const emailInput = document.getElementById("email");
+const phoneInput = document.getElementById("phone");
+const agreeInput = document.getElementById("agree");
 
 function showNotification(message, isSuccess = true) {
   const notification = document.createElement("div");
@@ -34,11 +39,11 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 
   // Здесь твой код
-  const name = document.getElementById("name").value;
-  const secondName = document.getElementById("secondName").value;
-  const email = document.getElementById("email").value;
-  const phone = document.getElementById("phone").value;
-  const agree = document.getElementById("agree").checked;
+  const name = nameInput.value;
+  const secondName = secondNameInput.value;
+  const email = emailInput.value;
+  const phone = phoneInput.value;
+  const agree = agreeInput.checked;
 
   fetch(`https://polinashneider.space/user`, {
     method: 'POST',
